@@ -31,7 +31,10 @@ RUN curl -O -L https://github.com/actions/runner/releases/download/$GH_VERSION/a
 RUN tar xzf ./actions-runner-linux-x64-$GH_VERSION.tar.gz
 
 
+# Here basically you are configuring the agent for your repository
+# the token you get it from the github settings. 
 
+# todo: in future make url and name of the worker configurable
 # todo I didnd't check with the ENV var, is on my todo list
 RUN ./config.sh --url https://github.com/MalloZup/ha-sap-terraform-deployments --token $TOKEN --unattended \
     --name shap-github-worker01
